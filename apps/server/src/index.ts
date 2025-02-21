@@ -1,9 +1,10 @@
-import { Hono } from 'hono'
+import { Hono } from "hono";
+import { env, getRuntimeKey } from "hono/adapter";
 
-const app = new Hono()
+const app = new Hono();
 
-app.get('/', (c) => {
-  return c.text('Hello Hono!')
-})
+app.get("/", (c) => {
+  return c.json(`${env(c).AWS_ACCESS_KEY}`);
+});
 
-export default app
+export default app;
