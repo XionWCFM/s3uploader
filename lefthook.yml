@@ -1,0 +1,14 @@
+commit-msg:
+  commands:
+    lint-commit-msg:
+      run: |
+        npx commitlint --edit
+
+pre-commit:
+  commands:
+    lint:
+      run: pnpm run check:biome
+      stage_fixed: true
+    format:
+      run: pnpm run ci:format
+      stage_fixed: true
