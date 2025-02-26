@@ -1,5 +1,5 @@
 import { Hono } from "hono";
-import { env, getRuntimeKey } from "hono/adapter";
+import { env } from "hono/adapter";
 
 const app = new Hono();
 
