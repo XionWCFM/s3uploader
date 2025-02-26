@@ -2,7 +2,6 @@ import { SidebarTrigger } from "@repo/ui/sidebar";
 import { SidebarInset } from "@repo/ui/sidebar";
 import { SidebarProvider } from "@repo/ui/sidebar";
 import { AppSidebar } from "../widgets/AppSideBar";
-import { PropsWithChildren } from "react";
 import { Outlet } from "@tanstack/react-router";
 
 export const SideBarLayout = () => {
