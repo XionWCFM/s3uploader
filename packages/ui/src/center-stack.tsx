@@ -1,10 +1,11 @@
-import { type ElementType, forwardRef, ReactNode } from "react";
+import { type ElementType, type ReactNode, forwardRef } from "react";
 import { Box, type BoxRef } from "./box";
 import type { BoxProps } from "./box";
 
-export const CenterStack = forwardRef(function CenterStack<
-  C extends ElementType = "div",
->({ as, className, ...rest }: BoxProps<C>, ref?: BoxRef<C>) {
+export const CenterStack = forwardRef(function CenterStack<C extends ElementType = "div">(
+  { as, className, ...rest }: BoxProps<C>,
+  ref?: BoxRef<C>,
+) {
   const typesRest = rest as BoxProps<C>;
   return (
     <Box
@@ -14,6 +15,4 @@ export const CenterStack = forwardRef(function CenterStack<
       {...typesRest}
     />
   );
-}) as <C extends ElementType = "div">(
-  props: BoxProps<C> & { ref?: BoxRef<C> }
-) => ReactNode;
+}) as <C extends ElementType = "div">(props: BoxProps<C> & { ref?: BoxRef<C> }) => ReactNode;

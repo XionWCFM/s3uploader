@@ -23,7 +23,9 @@ export type ObjectFit =
   | "bottom-right";
 
 const matchObjectFit = (objectFit?: ObjectFit) => {
-  if (!objectFit) return "";
+  if (!objectFit) {
+    return "";
+  }
   switch (objectFit) {
     case "cover":
       return "object-cover";
@@ -76,7 +78,7 @@ export const Image = forwardRef(function Image(
     isError?: boolean;
     isLoading?: boolean;
   },
-  ref: Ref<HTMLImageElement>
+  ref: Ref<HTMLImageElement>,
 ) {
   const {
     alt,
@@ -93,8 +95,7 @@ export const Image = forwardRef(function Image(
   const [_isLoading, setIsLoading] = useState(true);
   const [_isError, setIsError] = useState(false);
   const isError = typeof injectIsError === "boolean" ? injectIsError : _isError;
-  const isLoading =
-    typeof injectIsLoading === "boolean" ? injectIsLoading : _isLoading;
+  const isLoading = typeof injectIsLoading === "boolean" ? injectIsLoading : _isLoading;
 
   const handleLoad = (e: React.SyntheticEvent<HTMLImageElement, Event>) => {
     setIsLoading(false);
