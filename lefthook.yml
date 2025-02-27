@@ -7,8 +7,5 @@ commit-msg:
 pre-commit:
   commands:
     lint:
-      run: pnpm run check:biome
-      stage_fixed: true
-    format:
-      run: pnpm run ci:format
+      run: pnpm run ci:check
       stage_fixed: true
