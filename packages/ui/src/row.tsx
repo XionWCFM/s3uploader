@@ -1,4 +1,4 @@
-import { type ElementType, forwardRef, ReactNode } from "react";
+import { type ElementType, type ReactNode, forwardRef } from "react";
 import { Box, type BoxRef } from "./box";
 import type { BoxProps } from "./box";
 import { isString } from "./internal/is-string";
@@ -11,7 +11,7 @@ type RowProps = {
 
 export const Row = forwardRef(function Row<C extends ElementType = "li">(
   { as, className, left, children, right, ...rest }: BoxProps<C> & RowProps,
-  ref?: BoxRef<C>
+  ref?: BoxRef<C>,
 ) {
   const typesRest = rest as BoxProps<C>;
   return (
@@ -22,14 +22,10 @@ export const Row = forwardRef(function Row<C extends ElementType = "li">(
       {...typesRest}
     >
       {isString(left) ? <div>{left}</div> : left}
-      {isString(children) ? (
-        <div className="w-full text-left flex-grow">{children}</div>
-      ) : (
-        children
-      )}
+      {isString(children) ? <div className="w-full text-left flex-grow">{children}</div> : children}
       {isString(right) ? <div>{right}</div> : right}
     </Box>
   );
 }) as <C extends ElementType = "li">(
-  props: BoxProps<C> & RowProps & { ref?: BoxRef<C> }
+  props: BoxProps<C> & RowProps & { ref?: BoxRef<C> },
 ) => ReactNode;

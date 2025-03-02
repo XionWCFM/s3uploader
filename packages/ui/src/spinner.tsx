@@ -19,21 +19,9 @@ export const Spinner = (props: SpinnerProps) => {
         gradientTransform="scale(1.5)"
       >
         <stop offset="0" stopColor={color ?? "#888888"}></stop>
-        <stop
-          offset=".3"
-          stopColor={color ?? "#888888"}
-          stopOpacity=".9"
-        ></stop>
-        <stop
-          offset=".6"
-          stopColor={color ?? "#888888"}
-          stopOpacity=".6"
-        ></stop>
-        <stop
-          offset=".8"
-          stopColor={color ?? "#888888"}
-          stopOpacity=".3"
-        ></stop>
+        <stop offset=".3" stopColor={color ?? "#888888"} stopOpacity=".9"></stop>
+        <stop offset=".6" stopColor={color ?? "#888888"} stopOpacity=".6"></stop>
+        <stop offset=".8" stopColor={color ?? "#888888"} stopOpacity=".3"></stop>
         <stop offset="1" stopColor={color ?? "#888888"} stopOpacity="0"></stop>
       </radialGradient>
 
