@@ -1,14 +1,5 @@
-import {
-  DefaultProps,
-  DefaultPropsProvider,
-  ErrorBoundary,
-  Suspense,
-} from "@suspensive/react";
-import {
-  QueryClient,
-  QueryClientProvider,
-  QueryErrorResetBoundary,
-} from "@tanstack/react-query";
+import { DefaultProps, DefaultPropsProvider, ErrorBoundary, Suspense } from "@suspensive/react";
+import { QueryClient, QueryClientProvider, QueryErrorResetBoundary } from "@tanstack/react-query";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import { OverlayProvider } from "overlay-kit";
 import React from "react";
@@ -23,13 +14,11 @@ const TanStackRouterDevtools =
           default: res.TanStackRouterDevtools,
           // For Embedded Mode
           // default: res.TanStackRouterDevtoolsPanel
-        }))
+        })),
       );
 
 export const Providers = ({ children }: PropsWithChildren) => {
-  const [defaultProps] = useState(
-    () => new DefaultProps({ Delay: { ms: 200 } })
-  );
+  const [defaultProps] = useState(() => new DefaultProps({ Delay: { ms: 200 } }));
   const [queryClient] = useState(
     () =>
       new QueryClient({
@@ -44,7 +33,7 @@ export const Providers = ({ children }: PropsWithChildren) => {
             retry: 0,
           },
         },
-      })
+      }),
   );
 
   return (

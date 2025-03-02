@@ -4,9 +4,8 @@
     "dev": "wrangler dev",
     "deploy": "wrangler deploy --minify",
     "generate": "npx drizzle-kit generate",
-    "migrate:local": "npx wrangler d1 execute hono-lucia-test-db --file=./drizzle/0000_lush_william_stryker.sql",
-    "migrate:remote": "npx wrangler d1 execute hono-lucia-test-db --remote --file=./drizzle/0000_lush_william_stryker.sql",
-    "migrate": "concurrently \"npm run migrate:local\" \"npm run migrate:remote\""
+    "migrate:local": "npx wrangler d1 execute hono-lucia-test-db --file=./drizzle/0000_rainy_wraith.sql",
+    "migrate:remote": "npx wrangler d1 execute hono-lucia-test-db --remote --file=./drizzle/0000_rainy_wraith.sql"
   },
   "dependencies": {
     "@lucia-auth/adapter-sqlite": "^3.0.2",

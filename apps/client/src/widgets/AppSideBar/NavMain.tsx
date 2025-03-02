@@ -2,11 +2,7 @@
 
 import { ChevronRight, type LucideIcon } from "lucide-react";
 
-import {
-  Collapsible,
-  CollapsibleContent,
-  CollapsibleTrigger,
-} from "@repo/ui/collapsible";
+import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@repo/ui/collapsible";
 import {
   SidebarGroup,
   SidebarGroupLabel,

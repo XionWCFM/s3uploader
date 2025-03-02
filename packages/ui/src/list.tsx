@@ -10,7 +10,7 @@ type ListProps = {
 
 export const List = forwardRef(function List<C extends ElementType = "ul">(
   { as, className, children, fallback, ...rest }: BoxProps<C> & ListProps,
-  ref?: BoxRef<C>
+  ref?: BoxRef<C>,
 ) {
   const typesRest = rest as BoxProps<C>;
   const child = Children.toArray(children);
@@ -21,19 +21,10 @@ export const List = forwardRef(function List<C extends ElementType = "ul">(
   }
 
   return (
-    <Box
-      className={` flex flex-col break-words ${className}`}
-      ref={ref}
-      as={as}
-      {...typesRest}
-    >
-      {rest.with ? (
-        <Separated with={rest.with}>{children}</Separated>
-      ) : (
-        children
-      )}
+    <Box className={` flex flex-col break-words ${className}`} ref={ref} as={as} {...typesRest}>
+      {rest.with ? <Separated with={rest.with}>{children}</Separated> : children}
     </Box>
   );
 }) as <C extends ElementType = "ul">(
-  props: BoxProps<C> & ListProps & { ref?: BoxRef<C> }
+  props: BoxProps<C> & ListProps & { ref?: BoxRef<C> },
 ) => ReactNode;

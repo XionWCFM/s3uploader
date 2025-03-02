@@ -6,8 +6,8 @@
   "d1_databases": [
     {
       "binding": "DB",
-      "database_name": "poc-d1",
-      "database_id": "541b3f9c-249e-4e8f-be63-f4e90e8dcf20"
+      "database_name": "hono-lucia-test-db",
+      "database_id": "2280d38f-0028-4b0e-b10d-75fa247e005a"
     }
   ]
   // "compatibility_flags": [
